@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } %>
+        <form class="add-manager-form" action="" method="post" enctype="multipart/form-data">
+            <div style="overflow-x:auto;">
+                <table>
+                    <td>Manager's first name:</td>
+                    <td><input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required></td>
+                    </tr>
+                    <tr>
+                    <td>Manager's last name:</td>
+                    <td><input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required></td>
+                    </tr>
+                    <tr>
+                    <td><button type="submit" class="btn btn-primary float-right">Add Mananger</button></td>
+                    <td></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

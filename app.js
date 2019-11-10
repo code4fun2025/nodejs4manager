@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 const {getHomePage} = require('./routes/index');
-const {addPlayerPage, addPlayer, deletePlayer, editPlayer, editPlayerPage} = require('./routes/player');
+const {addManagerPage, addManager, deleteManager, editManager, editManagerPage} = require('./routes/manager');
 const port = 2000;
 
 // create connection to database
@@ -15,7 +15,7 @@ const db = mysql.createConnection ({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'socka'
+    database: 'bettermanager'
 });
 
 // connect to database
@@ -39,11 +39,11 @@ app.use(fileUpload()); // configure fileupload
 // routes for the app
 
 app.get('/', getHomePage);
-app.get('/add', addPlayerPage);
-app.get('/edit/:id', editPlayerPage);
-app.get('/delete/:id', deletePlayer);
-app.post('/add', addPlayer);
-app.post('/edit/:id', editPlayer);
+app.get('/add', addManagerPage);
+app.get('/edit/:id', editManagerPage);
+app.get('/delete/:id', deleteManager);
+app.post('/add', addManager);
+app.post('/edit/:id', editManager);
 
 // set the app to listen on the port
 app.listen(port, () => {
